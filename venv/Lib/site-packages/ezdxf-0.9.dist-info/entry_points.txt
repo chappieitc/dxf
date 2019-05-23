@@ -1,0 +1,4 @@
+[console_scripts]
+dxfaudit = ezdxf.audit.__main__:main
+dxfpp = ezdxf.pp.__main__:main
+
