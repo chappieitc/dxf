@@ -23,7 +23,7 @@ def find_nearest_point(point, point_list):
     print('list empty')
 
 
-def find_nearest_block(point, block_list):
+def find_nearest_block_y_constr(point, block_list):
     if block_list:
         current_dist = point_block_distance(point, block_list[0])
         current_block = block_list[0]

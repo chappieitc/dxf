@@ -1,4 +1,4 @@
-from points import find_nearest_point, find_nearest_block
+from points import find_nearest_point, find_nearest_block_y_constr
 
 
 def get_lines_by_layer(modelspace, layer_names):
@@ -15,6 +15,6 @@ def find_associated_entities(line, blocks, dot_points):
     start = line.dxf.start
     end = line.dxf.end
     leader_start = find_nearest_point(start, dot_points)
-    leader_block = find_nearest_block(end, blocks)
+    leader_block = find_nearest_block_y_constr(end, blocks)
 
     return leader_start, leader_block
