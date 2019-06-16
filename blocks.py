@@ -20,7 +20,7 @@ def get_block_text_data(block):
     layer = '\'K_przebicia w stropach\' '
 
     for attrib in block.attribs():
-        if attrib.dxf.tag == 'wymiar':  # identify attribute by tag
+        if attrib.dxf.tag in ['wymiar', 'WYMIARY']:  # identify attribute by tag
             string += attrib.dxf.text
         if attrib.dxf.tag == 'Rz.d.':
             if attrib.dxf.text:
@@ -28,6 +28,8 @@ def get_block_text_data(block):
                 wall_opening = True
         if attrib.dxf.tag == 'dno':
             dno = attrib.dxf.text
+            if 'w stropie' in attrib.dxf.text:
+                wall_opening = False
     if wall_opening:
         layer = '\'K_przebicia w scianach\' '
         string += '\\\\P' + rz + dno

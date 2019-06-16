@@ -1,7 +1,7 @@
 from points import find_nearest_point, find_nearest_block_y_constr
 
 
-def get_lines_by_layer(modelspace, layer_names):
+def get_lines_by_layers(modelspace, layer_names):
     string = 'LINE['
     separator = ' | '
     for n, name in enumerate(layer_names):
@@ -18,3 +18,5 @@ def find_associated_entities(line, blocks, dot_points):
     leader_block = find_nearest_block_y_constr(end, blocks)
 
     return leader_start, leader_block
+
+# def offset_walls(lines, widths):
